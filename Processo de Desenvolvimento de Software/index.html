@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Simulado de Processo de Desenvolvimento de Software baseado nos materiais das aulas, com 25 questões por tentativa.">
   <title>Simulado | Processo de Desenvolvimento de Software</title>
-  <link rel="stylesheet" href="../styles.css">
-  <link rel="stylesheet" href="simulado.css">
+  <link rel="stylesheet" href="../styles.css?v=7">
+  <link rel="stylesheet" href="simulado.css?v=7">
   <script src="questoes.js" defer></script>
-  <script src="simulado.js" defer></script>
+  <script src="simulado.js?v=6" defer></script>
 </head>
 <body>
   <main class="container simulado">
@@ -46,6 +46,7 @@
         <div class="placar"><span id="modo">Simulado principal</span><span><strong id="acertos">0</strong> acertos · <strong id="erros">0</strong> erros</span></div>
       </div>
       <article class="painel">
+        <div class="questao-conteudo">
         <div class="etiquetas"><span id="tema" class="etiqueta"></span><span id="tipo" class="tipo"></span></div>
         <h2 id="enunciado" tabindex="-1"></h2>
         <figure id="bloco-diagrama" class="bloco-diagrama" hidden>
@@ -56,12 +57,13 @@
           <div class="legenda-codigo"><span>Situação</span><span>Leia com atenção</span></div>
           <pre tabindex="0" aria-label="Trecho de código para interpretar"><code id="codigo"></code></pre>
         </div>
+        </div>
         <form id="resposta">
           <fieldset><legend class="somente-leitor">Escolha uma das quatro alternativas</legend><div id="alternativas" class="alternativas"></div></fieldset>
           <div id="feedback" class="feedback" hidden role="status" aria-live="polite" aria-atomic="true">
             <h3 id="feedback-titulo" tabindex="-1"></h3>
             <p id="resposta-correta"></p>
-            <h4>Por quê?</h4><p id="explicacao"></p><p id="fonte" class="fonte"></p>
+            <h4>Por quê?</h4><p id="explicacao"></p><details class="referencia"><summary>Referência da aula</summary><p id="fonte" class="fonte"></p></details>
           </div>
           <div class="rodape-questao">
             <span id="dica">Escolha uma alternativa para confirmar.</span>

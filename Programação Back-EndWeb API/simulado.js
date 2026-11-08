@@ -97,6 +97,10 @@
 
   function renderizarQuestao() {
     var questao = estado.fila[estado.indice];
+    var temCodigo = Boolean(questao.codigo);
+    el.questao.dataset.layout = questao.imagem ? "diagrama"
+      : temCodigo ? (questao.codigo.split("\n").length <= 3 ? "codigo-curto" : "codigo-longo")
+      : "texto";
     estado.selecionada = null;
     estado.confirmada = false;
     el.questao.dataset.questaoId = questao.id;
