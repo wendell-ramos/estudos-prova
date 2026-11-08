@@ -1,0 +1,18 @@
+# Configurações locais
+.env
+.env.*
+!.env.example
+
+# Dependências
+node_modules/
+vendor/
+
+# Materiais de aula usados como referência
+**/conteudo/
+
+# Arquivos temporários e de ferramentas
+.DS_Store
+Thumbs.db
+*.log
+.playwright-cli/
+output/playwright/

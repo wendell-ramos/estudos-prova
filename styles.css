@@ -1,0 +1,23 @@
+* { box-sizing: border-box; }
+:root { font-family: "Segoe UI", Arial, sans-serif; color: #243247; background: #f3f5f8; line-height: 1.6; color-scheme: light; }
+body { margin: 0; padding: 56px 20px; }
+.container { max-width: 720px; margin: 0 auto; }
+.intro { margin-bottom: 30px; }
+.label { color: #426590; font-size: 12px; letter-spacing: 1.2px; font-weight: 700; }
+h1 { font-size: clamp(26px, 4vw, 34px); line-height: 1.25; letter-spacing: -.6px; margin: 12px 0; }
+p { margin: 0; color: #606d7e; }
+.materias { display: grid; gap: 14px; }
+.materia { display: flex; align-items: center; gap: 18px; padding: 23px; background: #fff; border: 1px solid #dce2e9; border-radius: 10px; text-decoration: none; color: inherit; transition: border-color .15s, background-color .15s; }
+.materia:hover { border-color: #7695bc; background: #fbfcff; }
+.sigla { flex: 0 0 52px; height: 52px; display: grid; place-items: center; border-radius: 8px; background: #edf2f9; color: #365f91; font-size: 13px; font-weight: 700; }
+.materia-texto { flex: 1; min-width: 0; }
+.materia-nome { display: block; font-size: 17px; font-weight: 600; line-height: 1.4; }
+.materia-acao { display: block; margin-top: 5px; font-size: 13px; color: #65758b; }
+.seta { color: #426590; font-size: 22px; }
+a:focus-visible { outline: 3px solid #386db0; outline-offset: 4px; }
+.voltar { display: inline-block; margin-bottom: 28px; color: #365f91; text-decoration: none; font-size: 14px; }
+.voltar:hover { text-decoration: underline; }
+.aviso { background: #fff; border: 1px solid #dce2e9; border-radius: 10px; padding: 28px; }
+.aviso h2 { font-size: 19px; margin: 0 0 8px; }
+@media (max-width: 480px) { body { padding: 32px 16px; } .materia { padding: 18px 16px; gap: 12px; } .sigla { flex-basis: 44px; height: 44px; font-size: 12px; } .materia-nome { font-size: 16px; } .aviso { padding: 22px; } }
+@media (prefers-reduced-motion: reduce) { .materia { transition: none; } }

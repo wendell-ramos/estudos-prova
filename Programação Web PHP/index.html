@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Simulado de revisão de Programação Web PHP com 25 questões por tentativa baseadas nas aulas e orientações para a prova.">
+  <title>Simulado | Programação Web PHP</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="simulado.css">
+  <script src="questoes.js" defer></script>
+  <script src="simulado.js" defer></script>
+</head>
+<body>
+  <main class="container simulado">
+    <a class="voltar" href="../index.html">← Voltar às matérias</a>
+    <header class="intro">
+      <span class="label">REVISÃO PARA A PROVA</span>
+      <h1>Programação Web PHP</h1>
+      <p>Leia, interprete e confira seu raciocínio. Uma questão por vez, no seu ritmo.</p>
+    </header>
+
+    <section id="inicio" class="painel" aria-labelledby="inicio-titulo">
+      <span class="etiqueta">FOCO NAS ORIENTAÇÕES PARA A PROVA</span>
+      <h2 id="inicio-titulo" tabindex="-1">Vamos revisar?</h2>
+      <p>Teoria e interpretação de código, com explicação após cada resposta.</p>
+      <div class="resumo-inicio">
+        <div><strong id="quantidade">—</strong><span>questões por tentativa</span></div>
+        <div><strong>4</strong><span>alternativas por questão</span></div>
+        <div><strong>Sem pressa</strong><span>sem limite de tempo</span></div>
+      </div>
+      <p>Banco principal com <strong id="total-banco">44</strong> questões. Cada tentativa sorteia 25 entre HTTP, fundamentos, formulários e MVC.</p>
+      <p class="instrucao">Selecione uma alternativa e confirme. A explicação aparece em seguida; você só avança ao clicar em <strong>Próxima</strong>.</p>
+      <button id="comecar" class="botao principal" type="button" disabled>Começar simulado <span aria-hidden="true">→</span></button>
+      <details class="conteudos">
+        <summary>Assuntos da revisão</summary>
+        <ul id="temas" class="temas"></ul>
+      </details>
+      <details class="fontes revisao-extra">
+        <summary>Revisão extra: classes e PDO</summary>
+        <p>São <strong id="total-extra">6</strong> questões adicionais das aulas. Elas ficam fora das 25 questões do simulado principal.</p>
+        <button id="comecar-extra" class="botao secundario" type="button" disabled>Começar revisão extra</button>
+      </details>
+      <details class="fontes">
+        <summary>Materiais usados nas questões</summary>
+        <p>Questões autorais para estudo, elaboradas a partir dos materiais disponíveis. Não são questões oficiais da prova nem transcrições atribuídas ao professor.</p>
+        <ul id="materiais"></ul>
+      </details>
+    </section>
+
+    <section id="questao" hidden aria-labelledby="enunciado">
+      <div class="andamento">
+        <div class="linha-progresso"><span id="contador"></span><span id="respondidas"></span></div>
+        <progress id="progresso" value="0" max="25" aria-label="Questões respondidas"></progress>
+        <div class="placar"><span id="modo">Simulado principal</span><span><strong id="acertos">0</strong> acertos · <strong id="erros">0</strong> erros</span></div>
+      </div>
+      <article class="painel">
+        <div class="etiquetas"><span id="tema" class="etiqueta"></span><span id="tipo" class="tipo"></span></div>
+        <h2 id="enunciado" tabindex="-1"></h2>
+        <div id="bloco-codigo" class="bloco-codigo" hidden>
+          <div class="legenda-codigo"><span>PHP</span><span>Leia o código</span></div>
+          <pre tabindex="0" aria-label="Trecho de código para interpretar"><code id="codigo"></code></pre>
+        </div>
+        <form id="resposta">
+          <fieldset>
+            <legend class="somente-leitor">Escolha uma das quatro alternativas</legend>
+            <div id="alternativas" class="alternativas"></div>
+          </fieldset>
+          <div id="feedback" class="feedback" hidden role="status" aria-live="polite" aria-atomic="true">
+            <h3 id="feedback-titulo" tabindex="-1"></h3>
+            <p id="resposta-correta"></p>
+            <h4>Por quê?</h4>
+            <p id="explicacao"></p>
+            <p id="fonte" class="fonte"></p>
+          </div>
+          <div class="rodape-questao">
+            <span id="dica">Escolha uma alternativa para confirmar.</span>
+            <button id="confirmar" class="botao principal" type="submit" disabled>Confirmar resposta</button>
+            <button id="proxima" class="botao principal" type="button" hidden>Próxima <span aria-hidden="true">→</span></button>
+          </div>
+        </form>
+      </article>
+    </section>
+
+    <section id="resultado" class="painel resultado" hidden aria-labelledby="resultado-titulo">
+      <span class="etiqueta">TENTATIVA CONCLUÍDA</span>
+      <h2 id="resultado-titulo" tabindex="-1">Sua revisão, em números</h2>
+      <p id="resumo-resultado"></p>
+      <div class="numeros">
+        <div><strong id="percentual"></strong><span>de aproveitamento</span></div>
+        <div><strong id="total-acertos"></strong><span>acertos</span></div>
+        <div><strong id="total-erros"></strong><span>erros</span></div>
+      </div>
+      <p id="mensagem-resultado"></p>
+      <div class="acoes-resultado">
+        <button id="refazer" class="botao principal" type="button">Novo simulado de 25 questões</button>
+        <button id="treinar-erros" class="botao secundario" type="button">Treinar questões erradas</button>
+        <button id="voltar-inicio" class="botao secundario" type="button">Voltar ao início</button>
+      </div>
+      <p class="nota">As questões e as alternativas são embaralhadas em cada tentativa. O simulado principal inclui os quatro blocos; a revisão extra é separada. No treino de erros, a pontuação considera somente esse treino.</p>
+    </section>
+
+    <noscript><p class="painel">Ative o JavaScript do navegador para responder ao simulado.</p></noscript>
+    <footer class="rodape">Revisão com base nas aulas, exercícios e avaliações de PHP compartilhados.</footer>
+  </main>
+</body>
+</html>
+
