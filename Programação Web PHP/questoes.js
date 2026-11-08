@@ -1,8 +1,8 @@
-// Questões autorais de revisão, baseadas nos materiais indicados em fontes.
-// correta é o índice da resposta no banco; a interface embaralha as alternativas em cada tentativa.
+// Questões autorais baseadas nas aulas e no roteiro de PHP.
+// formato organiza o sorteio; correta aponta para a alternativa antes do embaralhamento.
 window.PHP_SIMULADO = {
   "titulo": "Programação Web PHP",
-  "versao": 4,
+  "versao": 5,
   "questoesPorTentativa": 25,
   "distribuicao": {
     "http": 7,
@@ -24,42 +24,98 @@ window.PHP_SIMULADO = {
       "id": "php-97",
       "grupo": "http",
       "tema": "Apache e HTTP",
-      "tipo": "Aplicação",
-      "enunciado": "Você acessa localhost/loja/index.php no mesmo notebook em que o XAMPP está instalado. Como ficam os papéis de cliente e servidor?",
+      "tipo": "Direta",
+      "enunciado": "Na comunicação HTTP, qual é o papel do cliente?",
       "codigo": "",
       "alternativas": [
-        "O navegador faz a requisição como cliente; o Apache atende como servidor, mesmo estando na mesma máquina.",
-        "O navegador faz a requisição como cliente; localhost faz o PHP ser executado pelo próprio navegador.",
-        "O Apache inicia a requisição como cliente; o navegador devolve o HTML como resposta do servidor.",
-        "O notebook atua só como cliente; para existir um servidor é necessário acessar outra máquina."
+        "Enviar a requisição e receber a resposta.",
+        "Receber a requisição e produzir a resposta.",
+        "Executar o PHP e devolver o HTML ao navegador.",
+        "Consultar os dados e escolher a View do servidor."
       ],
       "correta": 0,
-      "explicacao": "Cliente e servidor são papéis na comunicação, não uma exigência de computadores separados. O navegador solicita o recurso e o Apache atende a solicitação. localhost aponta para a própria máquina.",
-      "base": "roteiro"
+      "explicacao": "O cliente inicia a comunicação enviando uma requisição. O servidor a processa e devolve uma resposta.",
+      "base": "roteiro",
+      "formato": "direta"
     },
     {
       "id": "php-98",
       "grupo": "http",
       "tema": "Apache e HTTP",
-      "tipo": "Aplicação",
-      "enunciado": "No XAMPP, o Apache está ativo e o MySQL está parado. Uma página PHP apenas calcula uma média, sem acessar banco. Qual conclusão está correta?",
+      "tipo": "Direta",
+      "enunciado": "Qual é a função do Apache no XAMPP?",
       "codigo": "",
       "alternativas": [
-        "A página só pode responder se o MySQL estiver ativo, pois todo PHP depende dele.",
-        "A página pode responder, pois Apache/PHP podem processar o cálculo sem usar MySQL.",
-        "A página será enviada sem execução, pois é o MySQL que interpreta o PHP.",
-        "A página só pode responder se o navegador assumir o processamento do PHP."
+        "Armazenar e consultar os dados das tabelas.",
+        "Atender às requisições web e encaminhar a execução do PHP.",
+        "Interpretar o HTML recebido e desenhar a página.",
+        "Gerenciar as bibliotecas instaladas no projeto PHP."
       ],
       "correta": 1,
-      "explicacao": "O XAMPP reúne serviços diferentes. O Apache atende à requisição e utiliza o interpretador PHP configurado. O MySQL só é necessário quando a aplicação solicita dados desse serviço.",
-      "base": "roteiro"
+      "explicacao": "O Apache é o servidor web. Ele atende às requisições e usa o interpretador PHP configurado quando o recurso precisa desse processamento.",
+      "base": "roteiro",
+      "formato": "direta"
     },
     {
       "id": "php-99",
       "grupo": "http",
       "tema": "Apache e HTTP",
+      "tipo": "Direta",
+      "enunciado": "Em uma aplicação web servida pelo Apache, onde o código PHP é executado?",
+      "codigo": "",
+      "alternativas": [
+        "No navegador, antes de enviar a requisição.",
+        "No navegador, depois de receber o HTML.",
+        "No servidor, durante o processamento da requisição.",
+        "No banco de dados, durante a geração da resposta."
+      ],
+      "correta": 2,
+      "explicacao": "O PHP é executado no servidor. O navegador recebe a saída produzida, como HTML ou JSON.",
+      "base": "roteiro",
+      "formato": "direta"
+    },
+    {
+      "id": "php-100",
+      "grupo": "http",
+      "tema": "Apache e HTTP",
+      "tipo": "Direta",
+      "enunciado": "O que são request e response em HTTP?",
+      "codigo": "",
+      "alternativas": [
+        "Request é a resposta; response é a solicitação.",
+        "Request é a rota; response é o método HTTP.",
+        "Request é o corpo enviado; response é apenas o status.",
+        "Request é a solicitação; response é a resposta do servidor."
+      ],
+      "correta": 3,
+      "explicacao": "Request é a solicitação feita pelo cliente. Response é o retorno do servidor, que pode incluir status, cabeçalhos e corpo.",
+      "base": "roteiro",
+      "formato": "direta"
+    },
+    {
+      "id": "php-101",
+      "grupo": "http",
+      "tema": "Apache e HTTP",
+      "tipo": "Direta",
+      "enunciado": "Qual associação corresponde aos usos convencionais dos métodos HTTP?",
+      "codigo": "",
+      "alternativas": [
+        "GET consulta; POST cria; PUT atualiza; DELETE exclui.",
+        "GET consulta; PUT cria; POST atualiza; DELETE exclui.",
+        "POST consulta; GET cria; PUT atualiza; DELETE exclui.",
+        "GET consulta; POST cria; DELETE atualiza; PUT exclui."
+      ],
+      "correta": 0,
+      "explicacao": "GET consulta, POST normalmente cria, PUT pode substituir os dados de um recurso e DELETE solicita sua remoção.",
+      "base": "roteiro",
+      "formato": "direta"
+    },
+    {
+      "id": "php-102",
+      "grupo": "http",
+      "tema": "Apache e HTTP",
       "tipo": "Resultado",
-      "enunciado": "Uma requisição HTTP chega ao servidor configurado com PHP. Qual é o corpo da resposta produzido pelo trecho?",
+      "enunciado": "Qual é o corpo da resposta gerado por este PHP?",
       "codigo": "<?php\n$nome = \"Ana\";\necho \"<h1>Olá, \" . $nome . \"</h1>\";",
       "alternativas": [
         "<h1>Olá, $nome</h1>",
@@ -68,66 +124,16 @@ window.PHP_SIMULADO = {
         "echo \"<h1>Olá, Ana</h1>\";"
       ],
       "correta": 2,
-      "explicacao": "O PHP concatena a string Olá, com o valor Ana e envia as tags HTML junto com o texto. O corpo contém <h1>Olá, Ana</h1>; a apresentação visual do navegador não mostra as tags, mas elas fazem parte da resposta.",
-      "base": "roteiro"
-    },
-    {
-      "id": "php-100",
-      "grupo": "http",
-      "tema": "Apache e HTTP",
-      "tipo": "Aplicação",
-      "enunciado": "Um formulário envia uma quantidade ao PHP, que calcula o total e devolve HTML. Qual sequência descreve o request e o response?",
-      "codigo": "",
-      "alternativas": [
-        "O navegador calcula o total; o request leva o HTML pronto; o Apache apenas o devolve.",
-        "O servidor envia o formulário como request; o navegador devolve o total como response.",
-        "O navegador envia os campos como response; o PHP devolve o HTML como request.",
-        "O navegador envia os campos no request; o servidor calcula; o HTML volta no response."
-      ],
-      "correta": 3,
-      "explicacao": "Request é a solicitação enviada pelo cliente, incluindo os dados do formulário. Response é a resposta do servidor após o processamento. No cenário descrito, o cálculo ocorre no PHP antes da devolução do HTML.",
-      "base": "roteiro"
-    },
-    {
-      "id": "php-101",
-      "grupo": "http",
-      "tema": "Apache e HTTP",
-      "tipo": "Aplicação",
-      "enunciado": "Uma API segue os usos convencionais de GET, POST, PUT e DELETE. Para consultar /produtos, criar um produto, substituir os dados de /produtos/7 e excluir esse produto, qual sequência de métodos é adequada?",
-      "codigo": "",
-      "alternativas": [
-        "GET, POST, PUT, DELETE.",
-        "GET, PUT, POST, DELETE.",
-        "POST, GET, PUT, DELETE.",
-        "GET, POST, DELETE, PUT."
-      ],
-      "correta": 0,
-      "explicacao": "GET consulta; POST cria; PUT pode substituir os dados de um recurso identificado; DELETE exclui. A mesma ideia de recurso pode ter ações distintas conforme o método. O servidor ainda precisa implementar essas rotas.",
-      "base": "roteiro"
-    },
-    {
-      "id": "php-102",
-      "grupo": "http",
-      "tema": "Apache e HTTP",
-      "tipo": "Aplicação",
-      "enunciado": "Um formulário POST é enviado para /cadastro.php?origem=menu por HTTP sem HTTPS. Qual descrição do envio está correta?",
-      "codigo": "",
-      "alternativas": [
-        "Os campos e origem ficam no corpo; POST impede que sejam lidos durante o transporte.",
-        "Os campos ficam no corpo, origem permanece na query string e POST não fornece criptografia.",
-        "Os campos ficam na query string, origem vai para o corpo e POST não fornece criptografia.",
-        "Os campos ficam no corpo, origem deixa de ser enviado e POST fornece criptografia."
-      ],
-      "correta": 1,
-      "explicacao": "A URL pode continuar contendo uma query string mesmo quando o método é POST. Os campos do formulário vão no corpo. POST organiza o envio, mas não criptografa o transporte; essa proteção depende de HTTPS.",
-      "base": "roteiro"
+      "explicacao": "O servidor substitui a variável por Ana e envia o HTML <h1>Olá, Ana</h1>. As tags fazem parte do corpo, embora não apareçam como texto na página renderizada.",
+      "base": "roteiro",
+      "formato": "aplicacao"
     },
     {
       "id": "php-103",
       "grupo": "http",
       "tema": "Apache e HTTP",
-      "tipo": "Aplicação",
-      "enunciado": "O Apache usa a porta 8080 e tem C:\\xampp\\htdocs como raiz. O arquivo está em htdocs\\loja\\index.php. Qual URL solicita esse PHP ao Apache?",
+      "tipo": "Situação",
+      "enunciado": "O Apache usa a porta 8080 e a raiz htdocs. Qual URL acessa htdocs/loja/index.php?",
       "codigo": "",
       "alternativas": [
         "http://localhost/loja/index.php:8080",
@@ -136,15 +142,16 @@ window.PHP_SIMULADO = {
         "http://localhost/8080/loja/index.php"
       ],
       "correta": 2,
-      "explicacao": "A porta aparece depois do host, separada por dois-pontos. O caminho é relativo à raiz de documentos: htdocs não entra novamente na URL. O endereço correto é http://localhost:8080/loja/index.php.",
-      "base": "roteiro"
+      "explicacao": "A porta vem depois do host, com dois-pontos. O caminho começa dentro da raiz htdocs, sem repetir o nome dessa pasta.",
+      "base": "roteiro",
+      "formato": "aplicacao"
     },
     {
       "id": "php-104",
       "grupo": "http",
       "tema": "Apache e HTTP",
-      "tipo": "Aplicação",
-      "enunciado": "A rota é /produtos/{id}. Um POST para /produtos/7?categoria=2 envia nome=Boné no corpo. Qual é a origem de cada dado?",
+      "tipo": "Situação",
+      "enunciado": "Na rota /produtos/{id}, um POST para /produtos/7?categoria=2 envia nome=Boné no corpo. De onde vem cada valor?",
       "codigo": "",
       "alternativas": [
         "id=7: query string; categoria=2: rota; nome=Boné: corpo.",
@@ -153,83 +160,88 @@ window.PHP_SIMULADO = {
         "id=7: rota; categoria=2: query string; nome=Boné: corpo."
       ],
       "correta": 3,
-      "explicacao": "O 7 ocupa o lugar de {id} no caminho. categoria=2 vem depois de ? e é query string. nome=Boné foi enviado no corpo do POST. O parâmetro de rota precisa ser extraído pelo roteador; não vira automaticamente uma chave de $_GET.",
-      "base": "roteiro"
+      "explicacao": "7 é o parâmetro da rota, categoria=2 vem da query string e nome=Boné vem do corpo. O roteador precisa extrair o parâmetro do caminho.",
+      "base": "roteiro",
+      "formato": "aplicacao"
     },
     {
       "id": "php-65",
       "grupo": "http",
       "tema": "Apache e HTTP",
-      "tipo": "Leitura de código",
-      "enunciado": "JSON representa dados em texto. Qual corpo JSON este PHP envia, considerando também os tipos de id e nome?",
-      "codigo": "<?php\n$produto = [\"id\" => 7, \"nome\" => \"Camisa\"];\nheader(\"Content-Type: application/json; charset=UTF-8\");\necho json_encode($produto);",
+      "tipo": "Direta",
+      "enunciado": "O que é JSON?",
+      "codigo": "",
       "alternativas": [
-        "{\"id\":7,\"nome\":\"Camisa\"}",
-        "{\"id\":\"7\",\"nome\":\"Camisa\"}",
-        "[7,\"Camisa\"]",
-        "[{\"id\":7,\"nome\":\"Camisa\"}]"
+        "Uma linguagem de marcação para estruturar páginas.",
+        "Um formato textual para representar e trocar dados.",
+        "Um protocolo para transportar requisições na web.",
+        "Um mecanismo para carregar classes automaticamente."
       ],
-      "correta": 0,
-      "explicacao": "O array associativo vira um objeto JSON, com as chaves id e nome. O inteiro 7 continua numérico, sem aspas, e a string Camisa fica entre aspas. Não foi criado um array externo nem uma lista que descarte as chaves.",
-      "base": "mvc"
+      "correta": 1,
+      "explicacao": "JSON é um formato textual de dados, com objetos, listas e valores. Uma resposta PHP pode usar json_encode() para produzir esse formato.",
+      "base": "mvc",
+      "formato": "direta"
     },
     {
       "id": "php-111",
       "grupo": "http",
       "tema": "Apache e HTTP",
-      "tipo": "Identificação de erro",
-      "enunciado": "O servidor envia o cabeçalho application/json e o corpo abaixo. Qual avaliação está correta?",
-      "codigo": "<?php\nheader(\"Content-Type: application/json\");\necho \"nome=Ana\";",
+      "tipo": "Direta",
+      "enunciado": "Em uma URL, a que localhost se refere?",
+      "codigo": "",
       "alternativas": [
-        "O cabeçalho converte o corpo para {\"nome\":\"Ana\"} antes de enviá-lo.",
-        "O corpo continua nome=Ana e não é JSON válido; o cabeçalho apenas anuncia o formato.",
-        "O cabeçalho envolve o corpo em aspas e envia uma string JSON válida.",
-        "O corpo é JSON válido, porque pares com sinal de igual representam objetos JSON."
+        "À pasta que contém o arquivo PHP solicitado.",
+        "Ao banco configurado para a aplicação atual.",
+        "À própria máquina que está acessando o endereço.",
+        "Ao nome da aplicação dentro da pasta htdocs."
       ],
-      "correta": 1,
-      "explicacao": "O Content-Type não transforma a saída. nome=Ana é um texto no estilo de campo de formulário, não um objeto JSON. Para produzir o objeto, o PHP poderia aplicar json_encode() a [\"nome\" => \"Ana\"].",
-      "base": "mvc"
+      "correta": 2,
+      "explicacao": "localhost aponta para a própria máquina. Para atender a uma URL HTTP local, é necessário que haja um servidor ativo no endereço e na porta usados.",
+      "base": "mvc",
+      "formato": "direta"
     },
     {
       "id": "php-01",
       "grupo": "fundamentos",
       "tema": "Fundamentos de PHP",
-      "tipo": "Resultado",
-      "enunciado": "Quais tipos são exibidos, na ordem?",
-      "codigo": "<?php\n$quantidade = \"3\";\n$total = $quantidade * 2;\necho gettype($quantidade) . \"|\" . gettype($total);",
+      "tipo": "Direta",
+      "enunciado": "Qual declaração cria uma variável com um valor do tipo string?",
+      "codigo": "",
       "alternativas": [
-        "integer|integer",
-        "integer|string",
-        "string|integer",
-        "string|string"
+        "$nome = \"Ana\";",
+        "$nome = 10;",
+        "$nome = true;",
+        "$nome = [\"Ana\"];"
       ],
-      "correta": 2,
-      "explicacao": "A variável quantidade foi criada com uma string. Ao multiplicá-la por 2, PHP usa seu valor numérico e produz o inteiro 6 em total. A operação não altera o tipo da variável quantidade.",
-      "base": "roteiro"
+      "correta": 0,
+      "explicacao": "\"Ana\" é um texto, portanto uma string. Os outros valores são, respectivamente, inteiro, booleano e array.",
+      "base": "roteiro",
+      "formato": "direta"
     },
     {
       "id": "php-02",
       "grupo": "fundamentos",
       "tema": "Fundamentos de PHP",
-      "tipo": "Resultado",
-      "enunciado": "Qual é a saída, respeitando a diferença entre somar e concatenar?",
-      "codigo": "<?php\n$a = \"2\";\n$b = \"3\";\necho ($a + $b) . \"|\" . $a . $b;",
+      "tipo": "Direta",
+      "enunciado": "Qual operador concatena strings em PHP?",
+      "codigo": "",
       "alternativas": [
-        "23|23",
-        "5|5",
-        "23|5",
-        "5|23"
+        "+",
+        ".",
+        "=>",
+        "==="
       ],
-      "correta": 3,
-      "explicacao": "O operador + realiza a soma numérica de 2 e 3, resultando em 5. Depois do separador, o ponto junta as strings 2 e 3, produzindo 23.",
-      "base": "roteiro"
+      "correta": 1,
+      "explicacao": "O ponto junta strings. O sinal + faz soma, => associa uma chave a um valor e === compara valor e tipo.",
+      "base": "roteiro",
+      "formato": "direta"
     },
     {
       "id": "php-06",
       "grupo": "fundamentos",
       "tema": "Fundamentos de PHP",
       "tipo": "Resultado",
-      "enunciado": "Qual valor aparece após o for?",
+      "enunciado": "Qual valor o for exibe?",
       "codigo": "<?php\n$total = 0;\nfor ($i = 1; $i <= 5; $i++) {\n    if ($i % 2 != 0) {\n        $total += $i;\n    }\n}\necho $total;",
       "alternativas": [
         "9",
@@ -238,15 +250,16 @@ window.PHP_SIMULADO = {
         "15"
       ],
       "correta": 0,
-      "explicacao": "O resto da divisão por 2 é diferente de zero nos valores ímpares 1, 3 e 5. Só esses valores entram na soma: 1 + 3 + 5 = 9. Somar todas as iterações daria 15.",
-      "base": "roteiro"
+      "explicacao": "O teste com % seleciona os ímpares 1, 3 e 5. A soma é 9; somar todos os valores daria 15.",
+      "base": "roteiro",
+      "formato": "aplicacao"
     },
     {
       "id": "php-07",
       "grupo": "fundamentos",
       "tema": "Fundamentos de PHP",
       "tipo": "Resultado",
-      "enunciado": "Qual texto é exibido ao percorrer este array associativo?",
+      "enunciado": "Qual é a saída deste foreach?",
       "codigo": "<?php\n$estoque = [\"caneta\" => 4, \"caderno\" => 2];\nforeach ($estoque as $nome => $quantidade) {\n    echo $nome . \":\" . $quantidade . \";\";\n}",
       "alternativas": [
         "0:4;1:2;",
@@ -255,15 +268,16 @@ window.PHP_SIMULADO = {
         "caneta:0;caderno:1;"
       ],
       "correta": 1,
-      "explicacao": "Em foreach ($array as $chave => $valor), nome recebe a chave textual e quantidade recebe o valor. As chaves são caneta e caderno, não os índices 0 e 1 de uma lista comum.",
-      "base": "roteiro"
+      "explicacao": "nome recebe a chave textual e quantidade recebe o valor. As chaves são caneta e caderno, não os índices 0 e 1.",
+      "base": "roteiro",
+      "formato": "aplicacao"
     },
     {
       "id": "php-13",
       "grupo": "fundamentos",
       "tema": "Fundamentos de PHP",
       "tipo": "Resultado",
-      "enunciado": "Qual é a saída deste trecho?",
+      "enunciado": "Qual valor é exibido?",
       "codigo": "<?php\nfunction dobro($numero) {\n    return $numero * 2;\n}\n$resultado = dobro(3);\ndobro(4);\necho $resultado;",
       "alternativas": [
         "8",
@@ -272,66 +286,70 @@ window.PHP_SIMULADO = {
         "14"
       ],
       "correta": 2,
-      "explicacao": "A primeira chamada devolve 6 e o armazena. A segunda devolve 8, mas esse retorno não é usado nem exibido. O único echo mostra o valor armazenado, 6. return não equivale a imprimir.",
-      "base": "funcoes"
+      "explicacao": "A primeira chamada retorna 6 e o armazena. A chamada com 4 retorna 8, mas não o exibe nem altera resultado; o echo mostra 6.",
+      "base": "funcoes",
+      "formato": "aplicacao"
     },
     {
       "id": "php-105",
       "grupo": "fundamentos",
       "tema": "Fundamentos de PHP",
-      "tipo": "Resultado",
-      "enunciado": "Com a constante e as duas condições abaixo, qual texto aparece?",
-      "codigo": "<?php\nconst MINIMO = 6;\n$nota = 11;\nif ($nota >= MINIMO && $nota <= 10) {\n    echo \"aprovado\";\n} elseif ($nota > 10) {\n    echo \"nota inválida\";\n} else {\n    echo \"rever\";\n}",
+      "tipo": "Direta",
+      "enunciado": "Qual é a finalidade de uma constante em PHP?",
+      "codigo": "",
       "alternativas": [
-        "aprovado",
-        "rever",
-        "aprovadonota inválida",
-        "nota inválida"
+        "Guardar um valor que pode mudar durante a execução.",
+        "Guardar um valor acessível apenas dentro de um laço.",
+        "Dar nome a um valor que não será redefinido na execução.",
+        "Dar nome ao valor devolvido por uma função."
       ],
-      "correta": 3,
-      "explicacao": "Embora 11 seja maior ou igual a 6, ele não atende à condição nota <= 10. O && exige ambas. O primeiro bloco é descartado e o elseif identifica a nota acima do limite.",
-      "base": "roteiro"
+      "correta": 2,
+      "explicacao": "Uma constante representa um valor que não deve ser redefinido. Ela pode ser declarada com const e é referenciada sem o $ de uma variável.",
+      "base": "roteiro",
+      "formato": "direta"
     },
     {
       "id": "php-106",
       "grupo": "fundamentos",
       "tema": "Fundamentos de PHP",
       "tipo": "Resultado",
-      "enunciado": "Qual é a saída deste switch?",
-      "codigo": "<?php\n$status = \"pago\";\nswitch ($status) {\n    case \"pago\":\n        echo \"A\";\n    case \"enviado\":\n        echo \"B\";\n        break;\n    default:\n        echo \"C\";\n}",
+      "enunciado": "Qual texto este switch exibe?",
+      "codigo": "<?php\n$status = \"enviado\";\nswitch ($status) {\n    case \"pago\": echo \"separar\"; break;\n    case \"enviado\": echo \"acompanhar\"; break;\n    default: echo \"aguardar\";\n}",
       "alternativas": [
-        "AB",
-        "A",
-        "B",
-        "ABC"
+        "separar",
+        "acompanhar",
+        "aguardar",
+        "separaracompanhar"
       ],
-      "correta": 0,
-      "explicacao": "O switch entra em pago e exibe A. Como não há break nesse caso, continua no bloco seguinte e exibe B. O break depois de B impede a execução do default.",
-      "base": "roteiro"
+      "correta": 1,
+      "explicacao": "O valor enviado corresponde ao segundo case. O break encerra o switch depois de exibir acompanhar.",
+      "base": "roteiro",
+      "formato": "aplicacao"
     },
     {
       "id": "php-107",
       "grupo": "fundamentos",
       "tema": "Fundamentos de PHP",
       "tipo": "Resultado",
-      "enunciado": "Quais são os valores de total e i quando o while termina?",
-      "codigo": "<?php\n$i = 1;\n$total = 0;\nwhile ($total < 7) {\n    $total += $i;\n    $i++;\n}\necho $total . \"|\" . $i;",
+      "enunciado": "Qual é a saída deste while?",
+      "codigo": "<?php\n$i = 1;\nwhile ($i <= 3) {\n    echo $i;\n    $i++;\n}",
       "alternativas": [
-        "6|4",
-        "10|5",
-        "7|4",
-        "10|4"
+        "123",
+        "012",
+        "1234",
+        "234"
       ],
-      "correta": 1,
-      "explicacao": "As somas deixam total em 1, 3, 6 e 10. Na última iteração, i ainda vale 4 durante a soma e depois passa a 5. Só então a condição é verificada de novo, encerrando o laço.",
-      "base": "roteiro"
+      "correta": 0,
+      "explicacao": "O laço exibe 1, 2 e 3. Depois do incremento para 4, a condição fica falsa e a repetição termina.",
+      "base": "roteiro",
+      "formato": "aplicacao"
     },
     {
       "id": "php-112",
       "grupo": "fundamentos",
       "tema": "Fundamentos de PHP",
       "tipo": "Resultado",
-      "enunciado": "Qual texto é exibido depois de alterar o array indexado?",
+      "enunciado": "Qual texto é exibido após alterar o array?",
       "codigo": "<?php\n$itens = [\"mouse\", \"teclado\", \"monitor\"];\n$itens[1] = \"fone\";\n$itens[] = \"cabo\";\necho $itens[1] . \"|\" . $itens[3];",
       "alternativas": [
         "teclado|cabo",
@@ -340,237 +358,251 @@ window.PHP_SIMULADO = {
         "fone|monitor"
       ],
       "correta": 2,
-      "explicacao": "A lista começa no índice 0. O índice 1 corresponde a teclado e é substituído por fone. O novo item é acrescentado no índice 3, depois dos índices 0, 1 e 2.",
-      "base": "roteiro"
+      "explicacao": "O índice 1, inicialmente teclado, passa a conter fone. O item acrescentado fica no índice 3, pois a lista começou no índice 0.",
+      "base": "roteiro",
+      "formato": "aplicacao"
     },
     {
       "id": "php-113",
       "grupo": "fundamentos",
       "tema": "Fundamentos de PHP",
-      "tipo": "Resultado",
-      "enunciado": "Qual é a saída das três comparações? Considere PHP 8+.",
-      "codigo": "<?php\n$valor = \"7\";\necho ($valor == 7 ? \"S\" : \"N\");\necho ($valor === 7 ? \"S\" : \"N\");\necho ($valor != 7 ? \"S\" : \"N\");",
+      "tipo": "Direta",
+      "enunciado": "Qual é a diferença entre == e === em PHP?",
+      "codigo": "",
       "alternativas": [
-        "SSN",
-        "NNS",
-        "SNN",
-        "SNS"
+        "== compara apenas tipos; === compara apenas valores.",
+        "== atribui um valor; === compara valor e tipo.",
+        "Ambos exigem o mesmo valor e o mesmo tipo.",
+        "== compara valores; === exige valor e tipo iguais."
       ],
-      "correta": 2,
-      "explicacao": "A string numérica \"7\" e o inteiro 7 têm valores equivalentes para ==, então a primeira resposta é S. === também exige tipos iguais, portanto dá N. Como os valores são equivalentes, != é falso e produz N.",
-      "base": "roteiro"
+      "correta": 3,
+      "explicacao": "== permite comparação com conversão de tipos. === exige que o valor e o tipo sejam iguais.",
+      "base": "roteiro",
+      "formato": "direta"
     },
     {
       "id": "php-114",
       "grupo": "fundamentos",
       "tema": "Fundamentos de PHP",
       "tipo": "Resultado",
-      "enunciado": "Qual acesso será informado?",
-      "codigo": "<?php\n$logado = false;\n$visitante = true;\n$bloqueado = false;\nif (($logado || $visitante) && !$bloqueado) {\n    if ($logado) {\n        echo \"membro\";\n    } else {\n        echo \"visitante\";\n    }\n} else {\n    echo \"restrito\";\n}",
+      "enunciado": "Qual mensagem a condição lógica permite exibir?",
+      "codigo": "<?php\n$logado = false; $visitante = true;\n$bloqueado = false;\nif (($logado || $visitante) && !$bloqueado) {\n    echo \"liberado\";\n} else {\n    echo \"negado\";\n}",
       "alternativas": [
-        "membro",
-        "restrito",
-        "membrovisitante",
-        "visitante"
+        "liberado",
+        "negado",
+        "liberadonegado",
+        "Nenhum texto"
       ],
-      "correta": 3,
-      "explicacao": "O || é verdadeiro porque visitante é true. A negação de bloqueado também é verdadeira, permitindo entrar no primeiro bloco. Dentro dele, logado é false, então o else interno exibe visitante.",
-      "base": "roteiro"
+      "correta": 0,
+      "explicacao": "O || é verdadeiro porque visitante é true. !$bloqueado também é verdadeiro, então o bloco liberado executa.",
+      "base": "roteiro",
+      "formato": "aplicacao"
     },
     {
       "id": "php-115",
       "grupo": "fundamentos",
       "tema": "Fundamentos de PHP",
-      "tipo": "Identificação de erro",
-      "enunciado": "O programador queria comparar a nota, mas escreveu uma atribuição no if. O que o trecho efetivamente exibe?",
-      "codigo": "<?php\n$nota = 4;\nif ($nota = 7) {\n    echo \"aprovado\";\n} else {\n    echo \"reprovado\";\n}\necho \"|\" . $nota;",
+      "tipo": "Direta",
+      "enunciado": "Qual instrução atribui o valor 7 à variável nota?",
+      "codigo": "",
       "alternativas": [
-        "aprovado|7",
-        "reprovado|4",
-        "aprovado|4",
-        "reprovado|7"
+        "$nota = 7;",
+        "$nota == 7;",
+        "$nota === 7;",
+        "$nota != 7;"
       ],
       "correta": 0,
-      "explicacao": "O = atribui 7 à variável, em vez de compará-la. O valor atribuído, 7, é considerado verdadeiro na condição. Por isso o bloco aprovado executa e a nota final é 7. Para comparar, seriam usados == ou === conforme os tipos esperados.",
-      "base": "roteiro"
+      "explicacao": "= faz atribuição. ==, === e != são operadores de comparação e não alteram a variável.",
+      "base": "roteiro",
+      "formato": "direta"
     },
     {
       "id": "php-116",
       "grupo": "fundamentos",
       "tema": "Fundamentos de PHP",
       "tipo": "Resultado",
-      "enunciado": "Quais classificações são retornadas para os dois preços?",
-      "codigo": "<?php\nfunction classificar($preco) {\n    if ($preco < 100) {\n        return \"E\";\n    } elseif ($preco <= 500) {\n        return \"I\";\n    } else {\n        return \"P\";\n    }\n}\necho classificar(100) . \"|\" . classificar(500);",
+      "enunciado": "Qual classificação é exibida?",
+      "codigo": "<?php\n$nota = 6;\nif ($nota >= 7) { echo \"aprovado\"; }\nelseif ($nota >= 5) { echo \"recuperação\"; }\nelse { echo \"reprovado\"; }",
       "alternativas": [
-        "E|I",
-        "I|I",
-        "I|P",
-        "E|P"
+        "aprovado",
+        "recuperação",
+        "reprovado",
+        "aprovadorecuperação"
       ],
       "correta": 1,
-      "explicacao": "O limite inferior é exclusivo: 100 não atende a preco < 100. Os dois valores atendem ao segundo teste, preco <= 500, cujo limite superior é inclusivo. Ambas as chamadas retornam I.",
-      "base": "formularios"
+      "explicacao": "6 não atende ao primeiro teste, mas é maior ou igual a 5. O elseif executa e exibe recuperação.",
+      "base": "formularios",
+      "formato": "aplicacao"
     },
     {
       "id": "php-117",
       "grupo": "fundamentos",
       "tema": "Fundamentos de PHP",
-      "tipo": "Resultado",
-      "enunciado": "Qual valor é somado pelo foreach?",
-      "codigo": "<?php\n$numeros = [10, 20, 30];\n$total = 0;\nforeach ($numeros as $indice => $valor) {\n    if ($indice > 0) {\n        $total += $valor;\n    }\n}\necho $total;",
+      "tipo": "Direta",
+      "enunciado": "Para que serve foreach em PHP?",
+      "codigo": "",
       "alternativas": [
-        "60",
-        "30",
-        "50",
-        "3"
+        "Escolher um bloco entre vários valores possíveis.",
+        "Percorrer os elementos de um array.",
+        "Definir o valor padrão de um parâmetro.",
+        "Repetir um bloco enquanto uma condição for verdadeira."
       ],
-      "correta": 2,
-      "explicacao": "Os índices são 0, 1 e 2. O teste exclui o item de índice 0, cujo valor é 10. Somam-se os valores dos índices 1 e 2: 20 + 30 = 50. O teste usa o índice, mas a soma usa o valor.",
-      "base": "roteiro"
+      "correta": 1,
+      "explicacao": "foreach percorre os elementos de um array. Ele pode fornecer só o valor ou a chave e o valor de cada elemento.",
+      "base": "roteiro",
+      "formato": "direta"
     },
     {
       "id": "php-118",
       "grupo": "fundamentos",
       "tema": "Fundamentos de PHP",
       "tipo": "Resultado",
-      "enunciado": "Quais totais são exibidos, considerando o parâmetro padrão?",
-      "codigo": "<?php\n$quantidade = 5;\nfunction total($preco, $quantidade = 2) {\n    return $preco * $quantidade;\n}\necho total(10) . \"|\" . total(10, 3);",
+      "enunciado": "Qual total a função retorna nesta chamada?",
+      "codigo": "<?php\nfunction total($preco, $quantidade = 2) {\n    return $preco * $quantidade;\n}\necho total(10);",
       "alternativas": [
-        "50|30",
-        "20|20",
-        "50|50",
-        "20|30"
+        "10",
+        "12",
+        "20",
+        "2"
       ],
-      "correta": 3,
-      "explicacao": "Na primeira chamada falta o segundo argumento, então o parâmetro usa o padrão 2: 10 × 2 = 20. Na segunda ele recebe 3 e retorna 30. A variável externa de mesmo nome não substitui o parâmetro local.",
-      "base": "funcoes"
+      "correta": 2,
+      "explicacao": "Como a chamada não informa a quantidade, o parâmetro usa o padrão 2. O retorno é 10 × 2 = 20.",
+      "base": "funcoes",
+      "formato": "aplicacao"
     },
     {
       "id": "php-119",
       "grupo": "fundamentos",
       "tema": "Fundamentos de PHP",
-      "tipo": "Resultado",
-      "enunciado": "Esta função usa echo, não return. Qual é a saída completa?",
-      "codigo": "<?php\nfunction mostrarDobro($numero) {\n    echo $numero * 2;\n}\necho \"A\";\n$retorno = mostrarDobro(3);\necho \"|\";\necho $retorno;",
+      "tipo": "Direta",
+      "enunciado": "Qual é a diferença entre echo e return dentro de uma função?",
+      "codigo": "",
       "alternativas": [
-        "A6|",
-        "A|6",
-        "A6|6",
-        "A|"
+        "echo devolve um valor; return o envia à saída.",
+        "Ambos exibem o valor e encerram a função.",
+        "echo envia à saída; return devolve um valor e encerra a função.",
+        "Ambos devolvem um valor sem produzir saída."
       ],
-      "correta": 0,
-      "explicacao": "Primeiro aparece A. Durante a chamada, a função imprime 6. Depois aparece |. Como não há return, retorno recebe null, que não acrescenta texto quando passado a echo. O que foi exibido pela função não foi armazenado em retorno.",
-      "base": "funcoes"
+      "correta": 2,
+      "explicacao": "echo produz saída. return encerra a função e devolve um valor a quem a chamou; esse retorno não é exibido automaticamente.",
+      "base": "funcoes",
+      "formato": "direta"
     },
     {
       "id": "php-19",
       "grupo": "formularios",
       "tema": "Formulários e superglobais",
-      "tipo": "Aplicação",
-      "enunciado": "O formulário está em /loja/form.php. O usuário digita mouse e envia, sem JavaScript interceptar. Qual requisição resulta desse HTML?",
-      "codigo": "<form action=\"buscar.php\">\n    <input id=\"busca\" name=\"termo\" value=\"mouse\">\n    <button type=\"submit\">Buscar</button>\n</form>",
+      "tipo": "Direta",
+      "enunciado": "O que o atributo action de um formulário define?",
+      "codigo": "",
       "alternativas": [
-        "POST /loja/buscar.php, com termo=mouse no corpo.",
-        "GET /loja/buscar.php?termo=mouse.",
-        "GET /loja/form.php?termo=mouse.",
-        "GET /loja/buscar.php?busca=mouse."
+        "O método HTTP utilizado no envio.",
+        "O nome da chave enviada por cada campo.",
+        "O tipo de dado aceito em cada input.",
+        "O endereço que receberá o envio do formulário."
       ],
-      "correta": 1,
-      "explicacao": "Sem method, o formulário usa GET. action aponta para buscar.php na mesma pasta da página. O nome do parâmetro vem de name=\"termo\", não de id=\"busca\".",
-      "base": "formularios"
+      "correta": 3,
+      "explicacao": "action define o destino do formulário. O método é definido por method, e o nome enviado por cada campo vem de name.",
+      "base": "formularios",
+      "formato": "direta"
     },
     {
       "id": "php-20",
       "grupo": "formularios",
       "tema": "Formulários e superglobais",
-      "tipo": "Identificação de erro",
-      "enunciado": "Ao enviar 12.50 pelo formulário, calcular.php precisa recuperar esse preço. Qual leitura está alinhada ao envio?",
-      "codigo": "<form action=\"calcular.php\" method=\"post\">\n    <input id=\"valor\" name=\"preco\" value=\"12.50\">\n    <button type=\"submit\">Calcular</button>\n</form>",
+      "tipo": "Direta",
+      "enunciado": "Qual superglobal recebe os campos de um formulário enviado por POST?",
+      "codigo": "",
       "alternativas": [
-        "$preco = (float) $_GET[\"preco\"];",
-        "$preco = (float) $_POST[\"valor\"];",
-        "$preco = (float) $_POST[\"preco\"];",
-        "$preco = (float) $_GET[\"valor\"];"
+        "$_POST",
+        "$_GET",
+        "$_SERVER",
+        "$_FILES"
       ],
-      "correta": 2,
-      "explicacao": "POST define a superglobal e name=\"preco\" define a chave. id=\"valor\" serve para identificar o elemento no HTML, mas não muda o nome enviado. A conversão numérica é feita depois de recuperar o campo.",
-      "base": "formularios"
+      "correta": 0,
+      "explicacao": "Os campos de um formulário POST comum ficam em $_POST. $_FILES recebe arquivos enviados por upload.",
+      "base": "formularios",
+      "formato": "direta"
     },
     {
       "id": "php-21",
       "grupo": "formularios",
       "tema": "Formulários e superglobais",
-      "tipo": "Resultado",
-      "enunciado": "O campo nome foi enviado vazio. Qual resultado é produzido pela existência do campo e pela validação do conteúdo?",
-      "codigo": "<?php\n$_POST[\"nome\"] = \"\";\necho isset($_POST[\"nome\"]) ? \"recebido\" : \"ausente\";\necho trim($_POST[\"nome\"]) === \"\" ? \"|inválido\" : \"|válido\";",
+      "tipo": "Direta",
+      "enunciado": "O que isset($_POST[\"nome\"]) verifica?",
+      "codigo": "",
       "alternativas": [
-        "ausente|inválido",
-        "recebido|válido",
-        "ausente|válido",
-        "recebido|inválido"
+        "Se nome contém um texto diferente de espaços.",
+        "Se a chave nome está definida e não contém null.",
+        "Se nome contém um valor numérico válido.",
+        "Se o campo nome foi declarado com required."
       ],
-      "correta": 3,
-      "explicacao": "isset() confirma que a chave existe e não contém null; ele não exige texto preenchido. A segunda verificação encontra uma string vazia após trim(), portanto o conteúdo é inválido. Receber um campo e validá-lo são etapas diferentes.",
-      "base": "formularios"
+      "correta": 1,
+      "explicacao": "isset() verifica a existência com valor diferente de null. Ele não garante que o texto esteja preenchido ou válido.",
+      "base": "formularios",
+      "formato": "direta"
     },
     {
       "id": "php-22",
       "grupo": "formularios",
       "tema": "Formulários e superglobais",
-      "tipo": "Resultado",
-      "enunciado": "O formulário foi enviado com preco=12.50 e quantidade=3. Considere PHP 8+. Qual valor numérico o processamento exibe?",
-      "codigo": "<?php\n$preco = (float) $_POST[\"preco\"];\n$quantidade = (int) $_POST[\"quantidade\"];\n$total = $preco * $quantidade;\necho $total;",
+      "tipo": "Direta",
+      "enunciado": "Por que validar os campos no PHP mesmo usando required no HTML?",
+      "codigo": "",
       "alternativas": [
-        "37.5",
-        "36",
-        "15.5",
-        "12503"
+        "Porque required verifica apenas valores numéricos.",
+        "Porque required só funciona em formulários GET.",
+        "Porque uma requisição pode contornar a validação do navegador.",
+        "Porque required é verificado pelo PHP após receber os campos."
       ],
-      "correta": 0,
-      "explicacao": "O preço vira 12.5 e a quantidade vira 3. O resultado de multiplicar é 37.5. Converter o preço para inteiro descartaria a parte decimal e produziria 36, mas o trecho usa float.",
-      "base": "formularios"
+      "correta": 2,
+      "explicacao": "A validação do navegador pode ser contornada. O servidor precisa verificar os dados antes de processá-los ou salvá-los.",
+      "base": "formularios",
+      "formato": "direta"
     },
     {
       "id": "php-108",
       "grupo": "formularios",
       "tema": "Formulários e superglobais",
-      "tipo": "Resultado",
-      "enunciado": "O usuário abre /resultado.php?nome=Ana diretamente pela barra de endereços. Nenhum formulário foi enviado. Qual ramo executa e o que aparece?",
-      "codigo": "<?php\nif ($_SERVER[\"REQUEST_METHOD\"] === \"POST\") {\n    echo \"POST:\" . ($_POST[\"nome\"] ?? \"vazio\");\n} else {\n    echo \"GET:\" . ($_GET[\"nome\"] ?? \"vazio\");\n}",
+      "tipo": "Direta",
+      "enunciado": "Para que serve $_SERVER[\"REQUEST_METHOD\"]?",
+      "codigo": "",
       "alternativas": [
-        "POST:Ana",
-        "GET:Ana",
-        "POST:vazio",
-        "GET:vazio"
+        "Ler o caminho solicitado na URL.",
+        "Ler os campos enviados na query string.",
+        "Ler o nome do arquivo de entrada do projeto.",
+        "Identificar o método HTTP da requisição atual."
       ],
-      "correta": 1,
-      "explicacao": "Abrir essa URL gera uma requisição GET. O método vem de REQUEST_METHOD, e o parâmetro depois de ? está em $_GET. A presença de um parâmetro na URL não faz a requisição se tornar POST.",
-      "base": "mvc"
+      "correta": 3,
+      "explicacao": "REQUEST_METHOD informa se a requisição atual usa GET, POST ou outro método. O roteamento pode usar esse valor para selecionar a ação.",
+      "base": "mvc",
+      "formato": "direta"
     },
     {
       "id": "php-120",
       "grupo": "formularios",
       "tema": "Formulários e superglobais",
-      "tipo": "Resultado",
-      "enunciado": "O usuário envia os valores deste formulário, e media.php executa o PHP abaixo. Qual resultado o PHP acrescenta à resposta?",
-      "codigo": "<form action=\"media.php\" method=\"get\">\n    <input name=\"n1\" value=\"4\">\n    <input name=\"n2\" value=\"8\">\n    <button type=\"submit\">Calcular</button>\n</form>\n\n<?php\n$media = ((float) $_GET[\"n1\"] + (float) $_GET[\"n2\"]) / 2;\nif ($media >= 7) {\n    echo \"aprovado:\" . $media;\n} else {\n    echo \"recuperação:\" . $media;\n}",
+      "tipo": "Direta",
+      "enunciado": "Sem o atributo method, qual método um formulário HTML usa por padrão?",
+      "codigo": "",
       "alternativas": [
-        "aprovado:6",
-        "aprovado:8",
-        "recuperação:6",
-        "recuperação:4"
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
       ],
-      "correta": 2,
-      "explicacao": "Os valores vêm dos campos name=\"n1\" e name=\"n2\" via GET. A média é (4 + 8) / 2 = 6. Como 6 não é maior ou igual a 7, executa o else e aparece recuperação:6.",
-      "base": "formularios"
+      "correta": 0,
+      "explicacao": "O padrão é GET. Os campos enviados são incluídos na query string.",
+      "base": "formularios",
+      "formato": "direta"
     },
     {
       "id": "php-121",
       "grupo": "formularios",
       "tema": "Formulários e superglobais",
       "tipo": "Resultado",
-      "enunciado": "Um POST envia quantidade=-2. Qual mensagem o servidor produz com esta validação?",
-      "codigo": "<?php\nif (!isset($_POST[\"quantidade\"])) {\n    echo \"campo ausente\";\n} elseif ((int) $_POST[\"quantidade\"] < 1) {\n    echo \"quantidade inválida\";\n} else {\n    echo \"total:\" . ((int) $_POST[\"quantidade\"] * 10);\n}",
+      "enunciado": "Um POST envia quantidade=-2. Qual mensagem o PHP exibe?",
+      "codigo": "<?php\n$quantidade = (int) $_POST[\"quantidade\"];\nif ($quantidade < 1) {\n    echo \"quantidade inválida\";\n} else {\n    echo \"total:\" . ($quantidade * 10);\n}",
       "alternativas": [
         "total:-20",
         "campo ausente",
@@ -578,15 +610,16 @@ window.PHP_SIMULADO = {
         "quantidade inválida"
       ],
       "correta": 3,
-      "explicacao": "A chave existe, então o primeiro bloco não executa. -2 é menor que 1, fazendo o elseif rejeitar a quantidade antes do cálculo. isset() sozinho não garantiria um valor adequado.",
-      "base": "formularios"
+      "explicacao": "-2 é menor que 1, então o PHP rejeita a quantidade. Receber o campo não significa que seu valor seja válido.",
+      "base": "formularios",
+      "formato": "aplicacao"
     },
     {
       "id": "php-122",
       "grupo": "formularios",
       "tema": "Formulários e superglobais",
       "tipo": "Resultado",
-      "enunciado": "Um formulário POST envia id=9 para /salvar.php?id=7. Qual resultado o PHP produz ao ler cada origem separadamente?",
+      "enunciado": "Um POST envia id=9 para /salvar.php?id=7. Qual é a saída?",
       "codigo": "<?php\necho $_GET[\"id\"] . \"|\" . $_POST[\"id\"];",
       "alternativas": [
         "7|9",
@@ -595,135 +628,143 @@ window.PHP_SIMULADO = {
         "7|7"
       ],
       "correta": 0,
-      "explicacao": "$_GET guarda o id=7 da query string, enquanto $_POST guarda o id=9 do corpo do formulário. Os nomes iguais não fundem nem substituem automaticamente os dois arrays.",
-      "base": "formularios"
+      "explicacao": "$_GET lê o 7 da query string. $_POST lê o 9 do corpo; os dois arrays mantêm suas origens separadas.",
+      "base": "formularios",
+      "formato": "aplicacao"
     },
     {
       "id": "php-123",
       "grupo": "formularios",
       "tema": "Formulários e superglobais",
-      "tipo": "Resultado",
-      "enunciado": "O usuário digita Ana e envia este formulário para salvar.php. Qual texto o processamento PHP exibe?",
-      "codigo": "<form action=\"salvar.php\" method=\"post\">\n    <input id=\"nome\" value=\"Ana\">\n    <button type=\"submit\">Salvar</button>\n</form>\n\n<?php\necho $_POST[\"nome\"] ?? \"não recebido\";",
+      "tipo": "Direta",
+      "enunciado": "Qual atributo do input define a chave enviada ao PHP?",
+      "codigo": "",
       "alternativas": [
-        "Ana",
-        "não recebido",
-        "nome",
-        "Uma string vazia"
+        "id",
+        "name",
+        "value",
+        "type"
       ],
       "correta": 1,
-      "explicacao": "O input não tem name. Por isso o envio não cria a chave nome em $_POST, embora o campo tenha id e value. O operador ?? usa o texto alternativo quando a chave não está definida.",
-      "base": "formularios"
+      "explicacao": "name define o nome enviado. id identifica o elemento no HTML, value define seu valor e type define o tipo do input.",
+      "base": "formularios",
+      "formato": "direta"
     },
     {
       "id": "php-124",
       "grupo": "formularios",
       "tema": "Formulários e superglobais",
-      "tipo": "Identificação de erro",
-      "enunciado": "Um POST envia nome vazio. O código pretende rejeitá-lo, mas só imprime um aviso. Qual saída ele realmente produz?",
-      "codigo": "<?php\n$nome = trim($_POST[\"nome\"] ?? \"\");\nif ($nome === \"\") {\n    echo \"erro|\";\n}\necho \"salvo\";",
+      "tipo": "Resultado",
+      "enunciado": "O formulário envia os valores mostrados. Qual total calcular.php exibe?",
+      "codigo": "<form action=\"calcular.php\" method=\"post\">\n    <input name=\"preco\" value=\"10\">\n    <input name=\"quantidade\" value=\"3\">\n    <button type=\"submit\">Calcular</button>\n</form>\n\n<?php\n// calcular.php\necho (float) $_POST[\"preco\"] * (int) $_POST[\"quantidade\"];",
       "alternativas": [
-        "erro|",
-        "salvo",
-        "erro|salvo",
-        "Nenhum texto"
+        "13",
+        "10",
+        "30",
+        "103"
       ],
       "correta": 2,
-      "explicacao": "O if imprime o aviso, mas não interrompe a execução. Como o último echo está fora do if, salvo também aparece. O fluxo deve separar o caso válido, por exemplo com else ou com uma interrupção após o erro; required no HTML não substitui essa validação no servidor.",
-      "base": "formularios"
+      "explicacao": "O formulário envia preco e quantidade por POST. O processamento multiplica 10 por 3 e exibe 30.",
+      "base": "formularios",
+      "formato": "aplicacao"
     },
     {
       "id": "php-57",
       "grupo": "mvc",
       "tema": "MVC, rotas e organização",
-      "tipo": "Aplicação",
-      "enunciado": "Na listagem filtrada de produtos, o controller já recebeu o termo da busca. Em uma separação MVC, qual divisão para obter e apresentar os registros é a mais adequada?",
+      "tipo": "Direta",
+      "enunciado": "Qual divisão de responsabilidades corresponde ao MVC usado nas aulas?",
       "codigo": "",
       "alternativas": [
-        "A View consulta os registros e repassa o resultado ao Model para montar o HTML.",
-        "O Model monta o HTML dos registros e o controller o repassa à View para consultar.",
-        "O controller consulta diretamente os registros e o Model escolhe a View que será exibida.",
-        "O controller pede os registros ao Model e os entrega à View para montar o HTML."
+        "Model: apresentação; View: dados; Controller: requisição.",
+        "Model: dados; View: requisição; Controller: apresentação.",
+        "Model: requisição; View: apresentação; Controller: dados.",
+        "Model: dados; View: apresentação; Controller: requisição."
       ],
       "correta": 3,
-      "explicacao": "O controller coordena o caso de uso. O Model concentra a obtenção dos dados, e a View apresenta o resultado. Receber o filtro no controller não o obriga a misturar a consulta e a geração de HTML no mesmo lugar.",
-      "base": "mvc"
+      "explicacao": "O Model trata os dados, a View apresenta o conteúdo e o Controller coordena a requisição e as chamadas necessárias.",
+      "base": "mvc",
+      "formato": "direta"
     },
     {
       "id": "php-58",
       "grupo": "mvc",
       "tema": "MVC, rotas e organização",
-      "tipo": "Aplicação",
-      "enunciado": "No MVC simples com roteamento centralizado em index.php, qual caminho descreve uma consulta que precisa dos dados do Model?",
+      "tipo": "Direta",
+      "enunciado": "Na estrutura com roteamento centralizado da aula 8, qual arquivo funciona como ponto de entrada?",
       "codigo": "",
       "alternativas": [
-        "index.php seleciona a ação → controller solicita dados ao Model → controller entrega dados à View → HTML volta na resposta.",
-        "index.php seleciona a ação → Model escolhe a rota → View solicita dados ao controller → HTML volta na resposta.",
-        "index.php seleciona a ação → View consulta o Model → Model escolhe o controller → HTML volta na resposta.",
-        "index.php seleciona a ação → controller apresenta HTML → View consulta o Model → dados voltam ao index.php para escolher a rota."
+        "index.php",
+        "config.php",
+        "controller.php",
+        "produto.php"
       ],
       "correta": 0,
-      "explicacao": "index.php funciona como entrada do roteamento nessa organização. O controller executa a ação, usa o Model quando precisa de dados e prepara a View. O conteúdo renderizado compõe a resposta ao cliente. Uma página sem acesso a dados não precisa chamar o Model só para cumprir uma sequência.",
-      "base": "mvc"
+      "explicacao": "Nessa estrutura, index.php recebe a requisição e direciona a rota. Isso não significa que toda aplicação PHP precise começar por um arquivo com esse nome.",
+      "base": "mvc",
+      "formato": "direta"
     },
     {
       "id": "php-59",
       "grupo": "mvc",
       "tema": "MVC, rotas e organização",
-      "tipo": "Aplicação",
-      "enunciado": "O autoload já está configurado. Qual é o efeito específico da instrução use, antes de qualquer new ou chamada de método?",
-      "codigo": "<?php\nuse App\\Controllers\\CategoriaController;",
+      "tipo": "Direta",
+      "enunciado": "Para que serve use App\\Controllers\\CategoriaController?",
+      "codigo": "",
       "alternativas": [
-        "Localiza e executa o arquivo da classe imediatamente, como um require.",
-        "Permite usar CategoriaController como nome curto da classe nesse arquivo.",
-        "Cria uma instância de CategoriaController para a rota atual.",
-        "Chama o método index() de CategoriaController para montar a resposta."
+        "Carregar o arquivo da classe, como um require.",
+        "Permitir usar CategoriaController como nome curto nesse arquivo.",
+        "Criar uma instância da classe para a rota atual.",
+        "Executar o método index() do controller importado."
       ],
       "correta": 1,
-      "explicacao": "use importa o nome da classe para o contexto do arquivo. Isso não equivale a incluir o arquivo com require, instanciar um objeto ou executar um método. O carregamento pode ocorrer depois, pelo autoload, quando a classe for utilizada.",
-      "base": "mvc"
+      "explicacao": "use importa o nome da classe no arquivo atual. Ele não cria o objeto nem executa seus métodos.",
+      "base": "mvc",
+      "formato": "direta"
     },
     {
       "id": "php-60",
       "grupo": "mvc",
       "tema": "MVC, rotas e organização",
-      "tipo": "Identificação de erro",
-      "enunciado": "O Composer já gerou um autoload PSR-4 correto e o namespace da classe está certo. index.php tem use e new, mas não carregou o autoload. Qual inclusão resolve essa falta?",
-      "codigo": "<?php\nuse App\\Controllers\\CategoriaController;\n$controller = new CategoriaController();",
+      "tipo": "Direta",
+      "enunciado": "Para que serve o autoload gerado pelo Composer?",
+      "codigo": "",
       "alternativas": [
-        "require_once __DIR__ . \"/composer.json\";",
-        "require_once __DIR__ . \"/composer.lock\";",
-        "require_once __DIR__ . \"/vendor/autoload.php\";",
-        "require_once __DIR__ . \"/app/Views/layout.php\";"
+        "Selecionar o controller conforme a rota recebida.",
+        "Renderizar a View usando os dados do Model.",
+        "Carregar as classes conforme a configuração de namespaces.",
+        "Incluir todas as classes e executar seus construtores."
       ],
       "correta": 2,
-      "explicacao": "vendor/autoload.php registra o mecanismo de carregamento gerado pelo Composer. composer.json é sua configuração, não o carregador a executar. O use permite o nome curto, mas não substitui a inclusão do autoload.",
-      "base": "mvc"
+      "explicacao": "O Composer gerencia dependências e gera o autoload. Ao carregar vendor/autoload.php, o projeto registra o mecanismo que localiza as classes conforme a configuração.",
+      "base": "mvc",
+      "formato": "direta"
     },
     {
       "id": "php-61",
       "grupo": "mvc",
       "tema": "MVC, rotas e organização",
       "tipo": "Resultado",
-      "enunciado": "Após os tratamentos usados no roteamento da aula, qual caminho é exibido?",
-      "codigo": "<?php\n$uri = \"/aula8/categorias/?busca=livros\";\n$uri = strtok($uri, \"?\");\n$basedir = \"/aula8\";\nif (str_starts_with($uri, $basedir)) {\n    $uri = substr($uri, strlen($basedir));\n}\n$uri = rtrim($uri, \"/\");\necho $uri;",
+      "enunciado": "Qual caminho é exibido ao separar a query string?",
+      "codigo": "<?php\n$uri = \"/produtos?busca=mouse\";\n$rota = strtok($uri, \"?\");\necho $rota;",
       "alternativas": [
-        "/aula8/categorias",
-        "/categorias/?busca=livros",
-        "categorias",
-        "/categorias"
+        "/produtos",
+        "/produtos?busca=mouse",
+        "busca=mouse",
+        "produtos"
       ],
-      "correta": 3,
-      "explicacao": "strtok() separa a query string. O substr() retira o prefixo /aula8, e rtrim() elimina a barra final. A barra inicial não é removida, deixando /categorias.",
-      "base": "mvc"
+      "correta": 0,
+      "explicacao": "strtok() obtém o texto antes do ?. A rota fica /produtos, e busca=mouse é a query string.",
+      "base": "mvc",
+      "formato": "aplicacao"
     },
     {
       "id": "php-62",
       "grupo": "mvc",
       "tema": "MVC, rotas e organização",
-      "tipo": "Leitura de código",
-      "enunciado": "A requisição tem método POST e URI /api/categorias. Qual ação o roteador abaixo seleciona?",
-      "codigo": "<?php\n$uri = $_SERVER[\"REQUEST_URI\"];\n$metodo = $_SERVER[\"REQUEST_METHOD\"];\nif ($uri === \"/api/categorias\" && $metodo === \"GET\") {\n    echo \"listar\";\n} elseif ($uri === \"/api/categorias\" && $metodo === \"POST\") {\n    echo \"cadastrar\";\n} else {\n    echo \"rota não encontrada\";\n}",
+      "tipo": "Resultado",
+      "enunciado": "A rota /api/categorias recebe um POST. Qual ação é escolhida?",
+      "codigo": "<?php\n$metodo = $_SERVER[\"REQUEST_METHOD\"];\nif ($metodo === \"GET\") {\n    echo \"listar\";\n} elseif ($metodo === \"POST\") {\n    echo \"cadastrar\";\n} else { echo \"rota não encontrada\"; }",
       "alternativas": [
         "cadastrar",
         "listar",
@@ -731,42 +772,45 @@ window.PHP_SIMULADO = {
         "rota não encontrada"
       ],
       "correta": 0,
-      "explicacao": "O primeiro teste falha porque o método não é GET. O elseif combina a mesma URI com POST e seleciona cadastrar. O caminho sozinho não determina qual ação deve ser executada.",
-      "base": "mvc"
+      "explicacao": "O método não é GET, mas corresponde ao teste de POST. Nessa rota, o segundo bloco seleciona cadastrar.",
+      "base": "mvc",
+      "formato": "aplicacao"
     },
     {
       "id": "php-109",
       "grupo": "mvc",
       "tema": "MVC, rotas e organização",
-      "tipo": "Identificação de erro",
-      "enunciado": "config.php não existe no caminho informado, e não há tratamento da falha. Qual é o comportamento do require neste trecho?",
-      "codigo": "<?php\nrequire __DIR__ . \"/config.php\";\necho \"continuou\";",
+      "tipo": "Direta",
+      "enunciado": "O que acontece se require não consegue carregar um arquivo e a falha não é tratada?",
+      "codigo": "",
       "alternativas": [
-        "Emite um aviso de inclusão e chega ao echo, mostrando continuou.",
-        "Falha na inclusão obrigatória e interrompe o fluxo antes do echo.",
-        "Retorna false da inclusão e chega ao echo, mostrando continuou.",
-        "Não inclui configurações e encerra normalmente, sem informar falha."
+        "Emite um aviso e segue para a próxima instrução.",
+        "Retorna false e segue o restante do script.",
+        "Interrompe apenas se o arquivo tiver erro de sintaxe.",
+        "A inclusão falha e a execução é interrompida."
       ],
-      "correta": 1,
-      "explicacao": "require exige que a inclusão seja bem-sucedida. Se o arquivo não pode ser carregado, a falha sem tratamento interrompe o fluxo. Confundir esse comportamento com o de include pode levar à ideia incorreta de que o echo será executado.",
-      "base": "mvc"
+      "correta": 3,
+      "explicacao": "require exige que a inclusão funcione. Sem tratamento, a falha interrompe a execução; ele não cria automaticamente o arquivo ausente.",
+      "base": "mvc",
+      "formato": "direta"
     },
     {
       "id": "php-110",
       "grupo": "mvc",
       "tema": "MVC, rotas e organização",
-      "tipo": "Aplicação",
-      "enunciado": "O Composer mapeia o prefixo App\\ para app/. Pelo PSR-4, qual caminho corresponde a App\\Controllers\\ProdutoController?",
+      "tipo": "Situação",
+      "enunciado": "O controller de uma listagem precisa buscar produtos e mostrar HTML. Qual sequência respeita o MVC?",
       "codigo": "",
       "alternativas": [
-        "app/ProdutoController.php",
-        "app/App/Controllers/ProdutoController.php",
-        "app/Controllers/ProdutoController.php",
-        "app/Controllers/App/ProdutoController.php"
+        "View consulta → Model coordena → controller apresenta.",
+        "Controller consulta → View coordena → Model apresenta.",
+        "Controller pede dados ao Model → View apresenta os dados.",
+        "Model escolhe a rota → View pede dados ao controller."
       ],
       "correta": 2,
-      "explicacao": "O prefixo App\\ é substituído pela pasta app/. O restante, Controllers\\ProdutoController, vira Controllers/ProdutoController.php. Não se repete App como subpasta após aplicar o mapeamento.",
-      "base": "mvc"
+      "explicacao": "O controller coordena o fluxo, solicita os dados ao Model e os entrega à View para apresentação.",
+      "base": "mvc",
+      "formato": "aplicacao"
     }
   ],
   "extras": [
@@ -872,5 +916,23 @@ window.PHP_SIMULADO = {
       "explicacao": "fetchAll() devolve uma lista de linhas. O índice 0 seleciona a primeira linha; FETCH_ASSOC permite acessar suas colunas pelo nome, como [\"nome\"]. A lista externa não recebe automaticamente uma chave produtos.",
       "base": "pdo"
     }
-  ]
+  ],
+  "distribuicaoFormatos": {
+    "http": {
+      "direta": 5,
+      "aplicacao": 2
+    },
+    "fundamentos": {
+      "direta": 3,
+      "aplicacao": 5
+    },
+    "formularios": {
+      "direta": 4,
+      "aplicacao": 1
+    },
+    "mvc": {
+      "direta": 3,
+      "aplicacao": 2
+    }
+  }
 };

@@ -69,7 +69,11 @@
     var selecionadas = [];
     Object.keys(banco.distribuicao).forEach(function (grupo) {
       var questoes = lista.filter(function (q) { return q.grupo === grupo; });
-      selecionadas = selecionadas.concat(embaralhar(questoes).slice(0, banco.distribuicao[grupo]));
+      var formatos = banco.distribuicaoFormatos[grupo];
+      Object.keys(formatos).forEach(function (formato) {
+        var candidatas = questoes.filter(function (q) { return q.formato === formato; });
+        selecionadas = selecionadas.concat(embaralhar(candidatas).slice(0, formatos[formato]));
+      });
     });
     return embaralhar(selecionadas);
   }
